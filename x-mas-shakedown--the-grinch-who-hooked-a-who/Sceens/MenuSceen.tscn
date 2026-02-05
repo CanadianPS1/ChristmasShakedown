@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://cncltiowchbl2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="MainMenu" type="Node2D" parent="UI"]
+
+[node name="MovesButton" type="Button" parent="UI/MainMenu"]
+offset_left = -198.0
+offset_top = -19.0
+offset_right = 194.0
+offset_bottom = 70.0
+mouse_default_cursor_shape = 2
+text = "Moves"
+
+[node name="ExitButton" type="Button" parent="UI/MainMenu"]
+offset_left = -199.0
+offset_top = 113.0
+offset_right = 196.0
+offset_bottom = 211.0
+mouse_default_cursor_shape = 2
+text = "Exit"
+
+[node name="PlayButton" type="Button" parent="UI/MainMenu"]
+offset_left = -203.0
+offset_top = -168.0
+offset_right = 192.0
+offset_bottom = -70.0
+mouse_default_cursor_shape = 2
+text = "Play
+"
+
+[node name="CharacterSelect" type="Node2D" parent="UI"]
+
+[node name="PostGame" type="Node2D" parent="UI"]
+visible = false
+
+[node name="ReplayButton" type="Button" parent="UI/PostGame"]
+offset_left = 92.0
+offset_top = -96.0
+offset_right = 487.0
+offset_bottom = 2.0
+mouse_default_cursor_shape = 2
+text = "Replay
+"
+
+[node name="ExitToMainMenuButton" type="Button" parent="UI/PostGame"]
+offset_left = 93.0
+offset_top = 41.0
+offset_right = 488.0
+offset_bottom = 139.0
+mouse_default_cursor_shape = 2
+text = "Exit to Main Menu"
+
+[node name="Controlls" type="Node2D" parent="UI"]
+visible = false
+
+[node name="SallyWho" type="Button" parent="UI/Controlls"]
+offset_left = 41.0
+offset_top = -172.0
+offset_right = 200.0
+offset_bottom = 99.0
+mouse_default_cursor_shape = 2
+text = "Sally Who
+"
+
+[node name="BackButton" type="Button" parent="UI/Controlls"]
+offset_left = -196.0
+offset_top = 160.0
+offset_right = 199.0
+offset_bottom = 258.0
+mouse_default_cursor_shape = 2
+text = "Back
+"
+
+[node name="Grinch" type="Button" parent="UI/Controlls"]
+offset_left = -188.0
+offset_top = -173.0
+offset_right = -29.0
+offset_bottom = 98.0
+mouse_default_cursor_shape = 2
+text = "The Grinch
+"
+
+[node name="GrinchControlls" type="Node2D" parent="UI/Controlls"]
+visible = false
+
+[node name="BackButton" type="Button" parent="UI/Controlls/GrinchControlls"]
+offset_left = -196.0
+offset_top = 160.0
+offset_right = 199.0
+offset_bottom = 258.0
+mouse_default_cursor_shape = 2
+text = "Back
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Controlls/GrinchControlls"]
+offset_left = -56.0
+offset_top = -275.0
+offset_right = 295.0
+offset_bottom = -212.0
+text = "Grinch Controlls"
+
+[node name="SallyControlls" type="Node2D" parent="UI/Controlls"]
+visible = false
+
+[node name="BackButton" type="Button" parent="UI/Controlls/SallyControlls"]
+offset_left = -196.0
+offset_top = 160.0
+offset_right = 199.0
+offset_bottom = 258.0
+mouse_default_cursor_shape = 2
+text = "Back
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Controlls/SallyControlls"]
+offset_left = -56.0
+offset_top = -275.0
+offset_right = 295.0
+offset_bottom = -212.0
+text = "Sally Who Controlls"
+
+[node name="Camera2D" type="Camera2D" parent="."]

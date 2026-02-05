@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="X-mas Shakedown: The Grinch who Hooked a Who"
+run/main_scene="uid://cncltiowchbl2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
