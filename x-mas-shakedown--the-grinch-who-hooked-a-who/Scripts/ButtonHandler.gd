@@ -18,6 +18,7 @@ extends Node2D
 @onready var sallyControlls = get_node("SallyControlls")
 @onready var grinchControlls = get_node("GrinchControlls")
 @onready var controlls = get_node("Controlls")
+#lol this is a comment
 func _ready():
 	movesButton.pressed.connect(_movesButtonPressed)
 	exitButton.pressed.connect(_exitButtonPressed)
