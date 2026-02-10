@@ -1,27 +1,37 @@
 [gd_scene format=3 uid="uid://by3y522gwvpcn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkqww"]
-size = Vector2(1149, 53.75)
+[ext_resource type="Texture2D" uid="uid://bmnmfo3yxskbu" path="res://icon.svg" id="1_dsmy1"]
+[ext_resource type="Script" uid="uid://cho4i4d34kx7b" path="res://Scripts/Player Scripts/PlayerController.gd" id="2_62mge"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkqww"]
 radius = 31.0
 height = 138.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62mge"]
+size = Vector2(1153, 48)
+
 [node name="Game" type="Node2D" unique_id=409704245]
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=946246741]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=383984824]
-position = Vector2(1, 299.875)
-shape = SubResource("RectangleShape2D_gkqww")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=816194506]
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1979411397]
+position = Vector2(73, 26)
+floor_constant_speed = true
+floor_max_angle = 1.2130039
+floor_snap_length = 14.8
+script = ExtResource("2_62mge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1784339479]
-position = Vector2(-348, 171)
 shape = SubResource("CapsuleShape2D_gkqww")
 debug_color = Color(1.0004394, 0.03879876, 0, 0.81200004)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1438127395]
+texture = ExtResource("1_dsmy1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=816194506]
+position = Vector2(-1, -31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=224192528]
+position = Vector2(-185, 125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1892853440]
+position = Vector2(185, 141)
+shape = SubResource("RectangleShape2D_62mge")
