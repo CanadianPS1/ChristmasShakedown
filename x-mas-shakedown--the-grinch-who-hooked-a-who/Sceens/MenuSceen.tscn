@@ -1,15 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cncltiowchbl2"]
+[gd_scene format=3 uid="uid://cncltiowchbl2"]
 
-[ext_resource type="Script" uid="uid://b082ygwuo1n4r" path="res://Scripts/ButtonHandler.gd" id="1_2bfgj"]
-
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://b082ygwuo1n4r" path="res://Scripts/Menu Scripts/ButtonHandler.gd" id="1_2bfgj"]
 
 [node name="UI" type="Node2D" parent="."]
-script = ExtResource("1_2bfgj")
 
-[node name="MainMenu" type="Node2D" parent="UI"]
+[node name="UI" type="Node2D" parent="." unique_id=1032545606]
 
-[node name="MovesButton" type="Button" parent="UI/MainMenu"]
+[node name="MainMenu" type="Node2D" parent="UI" unique_id=1661262975]
+
+[node name="MovesButton" type="Button" parent="UI/MainMenu" unique_id=928070998]
 offset_left = -198.0
 offset_top = -19.0
 offset_right = 194.0
@@ -17,7 +16,7 @@ offset_bottom = 70.0
 mouse_default_cursor_shape = 2
 text = "Moves"
 
-[node name="ExitButton" type="Button" parent="UI/MainMenu"]
+[node name="ExitButton" type="Button" parent="UI/MainMenu" unique_id=2014031539]
 offset_left = -199.0
 offset_top = 113.0
 offset_right = 196.0
@@ -25,7 +24,7 @@ offset_bottom = 211.0
 mouse_default_cursor_shape = 2
 text = "Exit"
 
-[node name="PlayButton" type="Button" parent="UI/MainMenu"]
+[node name="PlayButton" type="Button" parent="UI/MainMenu" unique_id=404138289]
 offset_left = -203.0
 offset_top = -168.0
 offset_right = 192.0
@@ -33,48 +32,14 @@ offset_bottom = -70.0
 mouse_default_cursor_shape = 2
 text = "Play
 "
+script = ExtResource("1_2bfgj")
 
 [node name="CharacterSelect" type="Node2D" parent="UI"]
+
+[node name="PostGame" type="Node2D" parent="UI" unique_id=713313218]
 visible = false
 
-[node name="SallyWho" type="Button" parent="UI/CharacterSelect"]
-offset_left = 41.0
-offset_top = -172.0
-offset_right = 200.0
-offset_bottom = 99.0
-mouse_default_cursor_shape = 2
-text = "Sally Who
-"
-
-[node name="Grinch" type="Button" parent="UI/CharacterSelect"]
-offset_left = -196.0
-offset_top = -170.0
-offset_right = -37.0
-offset_bottom = 101.0
-mouse_default_cursor_shape = 2
-text = "The Grinch"
-
-[node name="BackButton" type="Button" parent="UI/CharacterSelect"]
-offset_left = -196.0
-offset_top = 160.0
-offset_right = 199.0
-offset_bottom = 258.0
-mouse_default_cursor_shape = 2
-text = "Back
-"
-
-[node name="FightButton" type="Button" parent="UI/CharacterSelect"]
-offset_left = -197.0
-offset_top = -299.0
-offset_right = 198.0
-offset_bottom = -201.0
-mouse_default_cursor_shape = 2
-text = "FIGHT"
-
-[node name="PostGame" type="Node2D" parent="UI"]
-visible = false
-
-[node name="ReplayButton" type="Button" parent="UI/PostGame"]
+[node name="ReplayButton" type="Button" parent="UI/PostGame" unique_id=1970160933]
 offset_left = 92.0
 offset_top = -96.0
 offset_right = 487.0
@@ -83,7 +48,7 @@ mouse_default_cursor_shape = 2
 text = "Replay
 "
 
-[node name="ExitToMainMenuButton" type="Button" parent="UI/PostGame"]
+[node name="ExitToMainMenuButton" type="Button" parent="UI/PostGame" unique_id=1165615442]
 offset_left = 93.0
 offset_top = 41.0
 offset_right = 488.0
@@ -91,48 +56,10 @@ offset_bottom = 139.0
 mouse_default_cursor_shape = 2
 text = "Exit to Main Menu"
 
-[node name="SallyControlls" type="Node2D" parent="UI"]
-visible = false
-
-[node name="BackButton" type="Button" parent="UI/SallyControlls"]
-offset_left = -196.0
-offset_top = 160.0
-offset_right = 199.0
-offset_bottom = 258.0
-mouse_default_cursor_shape = 2
-text = "Back
-"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/SallyControlls"]
-offset_left = -56.0
-offset_top = -275.0
-offset_right = 295.0
-offset_bottom = -212.0
-text = "Sally Who Controlls"
-
-[node name="GrinchControlls" type="Node2D" parent="UI"]
-visible = false
-
-[node name="BackButton" type="Button" parent="UI/GrinchControlls"]
-offset_left = -196.0
-offset_top = 160.0
-offset_right = 199.0
-offset_bottom = 258.0
-mouse_default_cursor_shape = 2
-text = "Back
-"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/GrinchControlls"]
-offset_left = -56.0
-offset_top = -275.0
-offset_right = 295.0
-offset_bottom = -212.0
-text = "Grinch Controlls"
-
 [node name="Controlls" type="Node2D" parent="UI"]
 visible = false
 
-[node name="SallyWho" type="Button" parent="UI/Controlls"]
+[node name="SallyWho" type="Button" parent="UI/Controlls" unique_id=1043693193]
 offset_left = 41.0
 offset_top = -172.0
 offset_right = 200.0
@@ -141,7 +68,7 @@ mouse_default_cursor_shape = 2
 text = "Sally Who
 "
 
-[node name="BackButton" type="Button" parent="UI/Controlls"]
+[node name="BackButton" type="Button" parent="UI/Controlls" unique_id=558863740]
 offset_left = -196.0
 offset_top = 160.0
 offset_right = 199.0
@@ -150,7 +77,7 @@ mouse_default_cursor_shape = 2
 text = "Back
 "
 
-[node name="Grinch" type="Button" parent="UI/Controlls"]
+[node name="Grinch" type="Button" parent="UI/Controlls" unique_id=460495523]
 offset_left = -188.0
 offset_top = -173.0
 offset_right = -29.0
@@ -158,5 +85,43 @@ offset_bottom = 98.0
 mouse_default_cursor_shape = 2
 text = "The Grinch
 "
+
+[node name="GrinchControlls" type="Node2D" parent="UI/Controlls"]
+visible = false
+
+[node name="BackButton" type="Button" parent="UI/Controlls/GrinchControlls"]
+offset_left = -196.0
+offset_top = 160.0
+offset_right = 199.0
+offset_bottom = 258.0
+mouse_default_cursor_shape = 2
+text = "Back
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Controlls/GrinchControlls"]
+offset_left = -56.0
+offset_top = -275.0
+offset_right = 295.0
+offset_bottom = -212.0
+text = "Grinch Controlls"
+
+[node name="SallyControlls" type="Node2D" parent="UI/Controlls"]
+visible = false
+
+[node name="BackButton" type="Button" parent="UI/Controlls/SallyControlls"]
+offset_left = -196.0
+offset_top = 160.0
+offset_right = 199.0
+offset_bottom = 258.0
+mouse_default_cursor_shape = 2
+text = "Back
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Controlls/SallyControlls"]
+offset_left = -56.0
+offset_top = -275.0
+offset_right = 295.0
+offset_bottom = -212.0
+text = "Sally Who Controlls"
 
 [node name="Camera2D" type="Camera2D" parent="."]
