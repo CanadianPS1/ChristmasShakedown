@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://by3y522gwvpcn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkqww"]
+size = Vector2(1149, 53.75)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkqww"]
+radius = 31.0
+height = 138.0
+
+[node name="Game" type="Node2D" unique_id=409704245]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=946246741]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=383984824]
+position = Vector2(1, 299.875)
+shape = SubResource("RectangleShape2D_gkqww")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=816194506]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1979411397]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1784339479]
+position = Vector2(-348, 171)
+shape = SubResource("CapsuleShape2D_gkqww")
+debug_color = Color(1.0004394, 0.03879876, 0, 0.81200004)
