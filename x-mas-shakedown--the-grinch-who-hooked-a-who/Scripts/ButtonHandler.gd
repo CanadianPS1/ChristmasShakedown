@@ -75,5 +75,5 @@ func _characterSelectBackButtonPressed():
 	mainMenu.show()
 func _fightButtonPressed():
 	print("_fightButtonPressed button pressed")
-	characterSelect.hide()
+	get_tree().change_scene_to_file("res://Sceens/GamePlay.tscn")
 	#make it display the fight sceen
