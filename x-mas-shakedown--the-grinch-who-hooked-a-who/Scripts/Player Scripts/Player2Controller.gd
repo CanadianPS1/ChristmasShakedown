@@ -28,12 +28,12 @@ func _physics_process(delta):
 	# Handle jump
 	if Input.is_action_just_pressed("P2Up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("P2Down") and is_on_floor() and crouching == false:
-		crouching = true;
-		body.scale.y = body.scale.y / 2;
 	if Input.is_action_just_released("P2Down") and is_on_floor() and crouching == true:
 		crouching = false;
 		body.scale.y = body.scale.y * 2;
+	if Input.is_action_just_pressed("P2Down") and is_on_floor() and crouching == false:
+		crouching = true;
+		body.scale.y = body.scale.y / 2;
 	# Get input direction (-1, 0, 1) and handle left/right movement
 	var direction = Input.get_axis("P2Left", "P2Right")
 	if direction:

@@ -68,8 +68,8 @@ shape = SubResource("CapsuleShape2D_gkqww")
 debug_color = Color(1.00044, 0.0387988, 0, 0.812)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchBody"]
-position = Vector2(0, 24.8469)
-scale = Vector2(0.625, 0.625)
+position = Vector2(-0.278125, 2.92813)
+scale = Vector2(0.625, 1.13281)
 texture = ExtResource("1_dsmy1")
 
 [node name="GrinchPunch" type="CollisionShape2D" parent="Player1Grinch"]
@@ -80,8 +80,8 @@ disabled = true
 debug_color = Color(0.996078, 0, 0.207843, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchPunch"]
-position = Vector2(0, 24.8469)
-scale = Vector2(0.625, 0.625)
+position = Vector2(0, 3.42345)
+scale = Vector2(0.625, 0.290259)
 texture = ExtResource("1_dsmy1")
 
 [node name="GrinchLight" type="CollisionShape2D" parent="Player1Grinch"]
@@ -92,8 +92,8 @@ disabled = true
 debug_color = Color(0.992659, 0.0830279, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchLight"]
-position = Vector2(0, 24.8469)
-scale = Vector2(0.625, 0.625)
+position = Vector2(7.62939e-06, 1.42345)
+scale = Vector2(1.75, 0.259009)
 texture = ExtResource("1_dsmy1")
 
 [node name="GrinchHeavie" type="CollisionShape2D" parent="Player1Grinch"]
@@ -104,8 +104,8 @@ disabled = true
 debug_color = Color(1, 0, 0.121569, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchHeavie"]
-position = Vector2(0, 24.8469)
-scale = Vector2(0.625, 0.625)
+position = Vector2(2.00002, -5.72205e-06)
+scale = Vector2(4.125, 0.625)
 texture = ExtResource("1_dsmy1")
 
 [node name="GrinchKick" type="CollisionShape2D" parent="Player1Grinch"]
@@ -116,8 +116,8 @@ disabled = true
 debug_color = Color(0.996078, 0, 0.184314, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchKick"]
-position = Vector2(0, 24.8469)
-scale = Vector2(0.625, 0.625)
+position = Vector2(-1.611, 3)
+scale = Vector2(1.375, 0.375)
 texture = ExtResource("1_dsmy1")
 
 [node name="Player2Grinch" type="CharacterBody2D" parent="."]
@@ -135,8 +135,8 @@ shape = SubResource("CapsuleShape2D_gkqww")
 debug_color = Color(1.00044, 0.0387988, 0, 0.812)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchBody"]
-position = Vector2(0, 24.8469)
-scale = Vector2(0.625, 0.625)
+position = Vector2(1.91875, -2.05312)
+scale = Vector2(0.625, 1.13311)
 texture = ExtResource("1_dsmy1")
 
 [node name="GrinchPunch" type="CollisionShape2D" parent="Player2Grinch"]
