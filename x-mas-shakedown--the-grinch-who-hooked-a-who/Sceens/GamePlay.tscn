@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://by3y522gwvpcn"]
+[gd_scene load_steps=15 format=3 uid="uid://by3y522gwvpcn"]
 
 [ext_resource type="Texture2D" uid="uid://bmnmfo3yxskbu" path="res://icon.svg" id="1_dsmy1"]
 [ext_resource type="Script" uid="uid://cho4i4d34kx7b" path="res://Scripts/Player Scripts/Player1Controller.gd" id="2_62mge"]
@@ -31,6 +31,12 @@ size = Vector2(509.555, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l55ge"]
 size = Vector2(172.777, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho4cy"]
+size = Vector2(68.7775, 81.07)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0b3l"]
+size = Vector2(78.535, 81.07)
 
 [node name="Game" type="Node2D"]
 
@@ -120,6 +126,21 @@ position = Vector2(-1.611, 3)
 scale = Vector2(1.375, 0.375)
 texture = ExtResource("1_dsmy1")
 
+[node name="GrinchPresent" type="CharacterBody2D" parent="Player1Grinch"]
+visible = false
+position = Vector2(13.1663, -231.07)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1Grinch/GrinchPresent"]
+visible = false
+shape = SubResource("RectangleShape2D_ho4cy")
+disabled = true
+debug_color = Color(0.908144, 0.300277, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchPresent/CollisionShape2D"]
+position = Vector2(-1.61125, 1.90735e-06)
+scale = Vector2(0.5625, 0.625)
+texture = ExtResource("1_dsmy1")
+
 [node name="Player2Grinch" type="CharacterBody2D" parent="."]
 position = Vector2(163.07, 167.07)
 scale = Vector2(-1, 1)
@@ -185,6 +206,18 @@ debug_color = Color(0.996078, 0, 0.184314, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchKick"]
 position = Vector2(0, 24.8469)
 scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_dsmy1")
+
+[node name="GrinchPresent" type="CharacterBody2D" parent="Player2Grinch"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2Grinch/GrinchPresent"]
+position = Vector2(258.338, -215.07)
+shape = SubResource("RectangleShape2D_e0b3l")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchPresent/CollisionShape2D"]
+position = Vector2(0.732483, -8)
+scale = Vector2(0.635118, 0.660283)
 texture = ExtResource("1_dsmy1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
