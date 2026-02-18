@@ -18,17 +18,36 @@ var punch
 var light
 var heavie
 var kick
-
+var body_shape
+var facing = 1  # 1 = right, -1 = left
 func _ready():
 	prefix = "P" + str(player_id)
-
+	body   = get_node("Hitbox")
+	print(body)
+	punch  = get_node("PunchHurtbox")
+	light  = get_node("LightHurtbox")
+	heavie = get_node("HeavyHurtbox")
+	kick   = get_node("KickHurtbox")
+	body_shape = body.shape
+	punch.get_node("CollisionShape2D").disabled = true
+	punch.hide
+	light.get_node("CollisionShape2D").disabled = true
+	light.hide
+	heavie.get_node("CollisionShape2D").disabled = true
+	heavie.hide
+	kick.get_node("CollisionShape2D").disabled = true
+	kick.hide
+	if player_id == 2:
+		facing = -1
+	else:
+		facing = 1
+	scale.x = facing 
+	
+	punch.body_entered.connect(_on_hurtbox_entered.bind("punch"))
+	kick.body_entered.connect(_on_hurtbox_entered.bind("kick"))
+	light.body_entered.connect(_on_hurtbox_entered.bind("light"))
+	heavie.body_entered.connect(_on_hurtbox_entered.bind("heavie"))
 func _physics_process(delta):
-#	if Grinch:
-	body   = get_node("GrinchBody")
-#		punch  = get_node("GrinchPunch")
-#		light  = get_node("GrinchLight")
-#		heavie = get_node("GrinchHeavie")
-#		kick   = get_node("GrinchKick")
 
 	# Gravity
 	if not is_on_floor():
@@ -41,16 +60,25 @@ func _physics_process(delta):
 	# Crouch
 	if Input.is_action_just_pressed(prefix + "Down") and not crouching:
 		crouching = true
-		body.scale.y /= 2
-
-	if Input.is_action_just_released(prefix + "Down") and is_on_floor() and crouching:
+		body_shape.height /= 2
+		body.position.y = 50.0
+	elif Input.is_action_just_released(prefix + "Down") and crouching:
 		crouching = false
-		body.scale.y *= 2
+		body_shape.height *= 2
+		body.position.y = 0.0
 
-	# Horizontal movement
+	
+
+
 	var direction = Input.get_axis(prefix + "Left", prefix + "Right")
+
 	if direction:
 		velocity.x = direction * SPEED
+		facing = sign(direction)
+		if facing == -1:
+			transform.x = Vector2(-1, 0)
+		else:
+			transform.x = Vector2(1, 0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED / 7)
 
@@ -67,26 +95,42 @@ func _physics_process(delta):
 		_do_attack("light", light, 0.4)
 
 	move_and_slide()
-
+	
 
 #Attack / damage handeling
-func _do_attack(attack_name: String, hitbox, duration: float):
+func _do_attack(attack_name: String, hurtbox, duration: float):
 	print("P" + str(player_id) + " used " + attack_name)
 	currentAttack = attack_name
-	hitbox.disabled = false
-	hitbox.show()
+	hurtbox.get_node("CollisionShape2D").disabled = false
+	hurtbox.show
 	await get_tree().create_timer(duration).timeout
-	hitbox.disabled = true
-	hitbox.hide()
+	hurtbox.get_node("CollisionShape2D").disabled = true
+	hurtbox.hide
 	currentAttack = ""
 
-
+func _on_hurtbox_entered(body, attack_name):
+	if body == self:
+		return  # ignore self
+	
+	var damage = 0.0
+	match attack_name:
+		"punch": damage = 10.0
+		"kick": damage = 15.0
+		"light": damage = 12.0
+		"heavie": damage = 25.0
+	
+	if body.has_method("_take_damage"):
+		body._take_damage(damage)
+		
+	
+	
 func _take_damage(damage: float):
 	if current_health > 0:
 		current_health -= damage
 	elif current_health <= 0:
-		#Need to create player win state
-		#this can just send you to a new screen with that 
-		#tells you that current player wins
-		print("Player Wins")
+		_player_win(player_id)
 	
+	
+func _player_win(player_id: int):
+	print("THis Player wins")
+	print(player_id)
