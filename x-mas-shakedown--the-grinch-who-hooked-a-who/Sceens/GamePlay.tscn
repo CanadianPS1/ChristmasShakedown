@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://by3y522gwvpcn"]
+[gd_scene format=3 uid="uid://by3y522gwvpcn"]
 
+[ext_resource type="Script" uid="uid://dc5w2gne8bd1t" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_62mge"]
 [ext_resource type="Texture2D" uid="uid://bmnmfo3yxskbu" path="res://icon.svg" id="1_dsmy1"]
-[ext_resource type="Script" uid="uid://cho4i4d34kx7b" path="res://Scripts/Player Scripts/Player1Controller.gd" id="2_62mge"]
-[ext_resource type="Script" uid="uid://ctc7leh5c78k3" path="res://Scripts/Player Scripts/Player2Controller.gd" id="3_68qrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62mge"]
 size = Vector2(1153, 48)
@@ -32,160 +31,207 @@ size = Vector2(509.555, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l55ge"]
 size = Vector2(172.777, 42)
 
-[node name="Game" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_62mge"]
+radius = 48.0
+height = 178.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho4cy"]
+size = Vector2(90.74999, 51)
+
+[node name="Game" type="Node2D" unique_id=1491194938]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1151786621]
 position = Vector2(-185, 125)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=834123972]
 position = Vector2(185, 141)
 shape = SubResource("RectangleShape2D_62mge")
 debug_color = Color(0, 0.65098, 0.0901961, 1)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=269449014]
 position = Vector2(-383, -160)
 shape = SubResource("RectangleShape2D_68qrh")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1603145725]
 position = Vector2(752, -157)
 shape = SubResource("RectangleShape2D_3d5e0")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=160654440]
 position = Vector2(188.25, -473)
 shape = SubResource("RectangleShape2D_ud5e3")
 
-[node name="Player1Grinch" type="CharacterBody2D" parent="."]
+[node name="Player1Grinch" type="CharacterBody2D" parent="." unique_id=1245116631]
+visible = false
 position = Vector2(-119.555, 167.07)
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
-script = ExtResource("2_62mge")
+script = ExtResource("1_62mge")
 
-[node name="GrinchBody" type="CollisionShape2D" parent="Player1Grinch"]
+[node name="GrinchBody" type="CollisionShape2D" parent="Player1Grinch" unique_id=1927451408]
 position = Vector2(0, -39.755)
 scale = Vector2(1.6, 1.6)
 shape = SubResource("CapsuleShape2D_gkqww")
 debug_color = Color(1.00044, 0.0387988, 0, 0.812)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchBody"]
-position = Vector2(-0.278125, 2.92813)
+[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchBody" unique_id=334498359]
+position = Vector2(-171.52812, -12.6968775)
 scale = Vector2(0.625, 1.13281)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchPunch" type="CollisionShape2D" parent="Player1Grinch"]
+[node name="GrinchPunch" type="CollisionShape2D" parent="Player1Grinch" unique_id=76690751]
 visible = false
 position = Vector2(65.555, -53.07)
 shape = SubResource("RectangleShape2D_gkl22")
 disabled = true
 debug_color = Color(0.996078, 0, 0.207843, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchPunch"]
+[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchPunch" unique_id=1234531677]
 position = Vector2(0, 3.42345)
 scale = Vector2(0.625, 0.290259)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchLight" type="CollisionShape2D" parent="Player1Grinch"]
+[node name="GrinchLight" type="CollisionShape2D" parent="Player1Grinch" unique_id=1223948967]
 visible = false
 position = Vector2(127.555, -57.07)
 shape = SubResource("RectangleShape2D_ywwb6")
 disabled = true
 debug_color = Color(0.992659, 0.0830279, 0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchLight"]
+[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchLight" unique_id=123638123]
 position = Vector2(7.62939e-06, 1.42345)
 scale = Vector2(1.75, 0.259009)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchHeavie" type="CollisionShape2D" parent="Player1Grinch"]
+[node name="GrinchHeavie" type="CollisionShape2D" parent="Player1Grinch" unique_id=1638912923]
 visible = false
 position = Vector2(237.555, -55.07)
 shape = SubResource("RectangleShape2D_0ondl")
 disabled = true
 debug_color = Color(1, 0, 0.121569, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchHeavie"]
+[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchHeavie" unique_id=584294344]
 position = Vector2(2.00002, -5.72205e-06)
 scale = Vector2(4.125, 0.625)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchKick" type="CollisionShape2D" parent="Player1Grinch"]
+[node name="GrinchKick" type="CollisionShape2D" parent="Player1Grinch" unique_id=1462211650]
 visible = false
 position = Vector2(105.166, 37.93)
 shape = SubResource("RectangleShape2D_l55ge")
 disabled = true
 debug_color = Color(0.996078, 0, 0.184314, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchKick"]
+[node name="Sprite2D" type="Sprite2D" parent="Player1Grinch/GrinchKick" unique_id=1110195776]
 position = Vector2(-1.611, 3)
 scale = Vector2(1.375, 0.375)
 texture = ExtResource("1_dsmy1")
 
-[node name="Player2Grinch" type="CharacterBody2D" parent="."]
+[node name="Player2Sally" type="CharacterBody2D" parent="." unique_id=1369900013]
 position = Vector2(163.07, 167.07)
 scale = Vector2(-1, 1)
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
-script = ExtResource("3_68qrh")
+script = ExtResource("1_62mge")
+player_id = 2
 
-[node name="GrinchBody" type="CollisionShape2D" parent="Player2Grinch"]
+[node name="SallytBody" type="CollisionShape2D" parent="Player2Sally" unique_id=1607584388]
 position = Vector2(0, -39.755)
 scale = Vector2(1.6, 1.6)
 shape = SubResource("CapsuleShape2D_gkqww")
 debug_color = Color(1.00044, 0.0387988, 0, 0.812)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchBody"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2Sally/SallytBody" unique_id=347767722]
 position = Vector2(1.91875, -2.05312)
 scale = Vector2(0.625, 1.13311)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchPunch" type="CollisionShape2D" parent="Player2Grinch"]
+[node name="GrinchPunch" type="CollisionShape2D" parent="Player2Sally" unique_id=2140703482]
 visible = false
 position = Vector2(65.555, -53.07)
 shape = SubResource("RectangleShape2D_gkl22")
 disabled = true
 debug_color = Color(0.996078, 0, 0.207843, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchPunch"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2Sally/GrinchPunch" unique_id=1276750866]
 position = Vector2(0, 24.8469)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchLight" type="CollisionShape2D" parent="Player2Grinch"]
+[node name="GrinchLight" type="CollisionShape2D" parent="Player2Sally" unique_id=1971378627]
 visible = false
 position = Vector2(127.555, -57.07)
 shape = SubResource("RectangleShape2D_ywwb6")
 disabled = true
 debug_color = Color(0.992659, 0.0830279, 0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchLight"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2Sally/GrinchLight" unique_id=204374508]
 position = Vector2(0, 24.8469)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchHeavie" type="CollisionShape2D" parent="Player2Grinch"]
+[node name="GrinchHeavie" type="CollisionShape2D" parent="Player2Sally" unique_id=1715172226]
 visible = false
 position = Vector2(237.555, -55.07)
 shape = SubResource("RectangleShape2D_0ondl")
 disabled = true
 debug_color = Color(1, 0, 0.121569, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchHeavie"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2Sally/GrinchHeavie" unique_id=1386588410]
 position = Vector2(0, 24.8469)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("1_dsmy1")
 
-[node name="GrinchKick" type="CollisionShape2D" parent="Player2Grinch"]
+[node name="GrinchKick" type="CollisionShape2D" parent="Player2Sally" unique_id=72432018]
 visible = false
 position = Vector2(105.166, 37.93)
 shape = SubResource("RectangleShape2D_l55ge")
 disabled = true
 debug_color = Color(0.996078, 0, 0.184314, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2Grinch/GrinchKick"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2Sally/GrinchKick" unique_id=1688072778]
 position = Vector2(0, 24.8469)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("1_dsmy1")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=529961948]
 position = Vector2(-1, -31)
+
+[node name="Player1" type="CharacterBody2D" parent="." unique_id=38468320]
+position = Vector2(-119.525, 126.055)
+floor_constant_speed = true
+floor_max_angle = 1.213
+floor_snap_length = 14.8
+script = ExtResource("1_62mge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player1" unique_id=1627134617]
+scale = Vector2(0.7343749, 1.3749999)
+texture = ExtResource("1_dsmy1")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player1" unique_id=719732252]
+shape = SubResource("CapsuleShape2D_62mge")
+
+[node name="PunchHurtbox" type="Area2D" parent="Player1" unique_id=1415402131]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/PunchHurtbox" unique_id=978026593]
+position = Vector2(151.525, -34.055)
+shape = SubResource("RectangleShape2D_ho4cy")
+
+[node name="LightHurtbox" type="Area2D" parent="Player1" unique_id=21693905]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/LightHurtbox" unique_id=239783796]
+position = Vector2(151.525, -34.055)
+shape = SubResource("RectangleShape2D_ho4cy")
+
+[node name="HeavyHurtbox" type="Area2D" parent="Player1" unique_id=2028183426]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/HeavyHurtbox" unique_id=575658636]
+position = Vector2(151.525, -34.055)
+shape = SubResource("RectangleShape2D_ho4cy")
+
+[node name="KickHurtbox" type="Area2D" parent="Player1" unique_id=178911829]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/KickHurtbox" unique_id=1163698960]
+position = Vector2(151.525, -34.055)
+shape = SubResource("RectangleShape2D_ho4cy")
