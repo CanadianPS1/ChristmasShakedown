@@ -19,6 +19,10 @@ run/main_scene="uid://cncltiowchbl2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*uid://cmloy5v66lnhf"
+
 [input]
 
 P1Left={

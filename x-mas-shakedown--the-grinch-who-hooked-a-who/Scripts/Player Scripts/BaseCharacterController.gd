@@ -120,17 +120,16 @@ func _on_hurtbox_entered(body, attack_name):
 		"heavie": damage = 25.0
 	
 	if body.has_method("_take_damage"):
-		body._take_damage(damage)
+		body._take_damage(damage, player_id)
 		
 	
 	
-func _take_damage(damage: float):
+func _take_damage(damage: float, attacker_id: int):
 	if current_health > 0:
 		current_health -= damage
 	elif current_health <= 0:
-		_player_win(player_id)
+		GameState.on_player_win(attacker_id)
 	
 	
-func _player_win(player_id: int):
-	print("THis Player wins")
-	print(player_id)
+
+	

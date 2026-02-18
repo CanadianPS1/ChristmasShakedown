@@ -15,7 +15,7 @@ size = Vector2(41, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5e3"]
 size = Vector2(1125.5, 20)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_62mge"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68qrh"]
 radius = 48.0
 height = 178.0
 
@@ -27,6 +27,10 @@ size = Vector2(167.47499, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8v46g"]
 size = Vector2(204, 87.555)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_62mge"]
+radius = 48.0
+height = 178.0
 
 [node name="Game" type="Node2D" unique_id=1491194938]
 
@@ -54,7 +58,7 @@ shape = SubResource("RectangleShape2D_ud5e3")
 position = Vector2(-1, -31)
 
 [node name="Player1" type="CharacterBody2D" parent="." unique_id=38468320]
-position = Vector2(-119.525, 126.055)
+position = Vector2(-400, 150)
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
@@ -65,7 +69,7 @@ scale = Vector2(0.7343749, 1.3749999)
 texture = ExtResource("1_dsmy1")
 
 [node name="Hitbox" type="CollisionShape2D" parent="Player1" unique_id=719732252]
-shape = SubResource("CapsuleShape2D_62mge")
+shape = SubResource("CapsuleShape2D_68qrh")
 
 [node name="PunchHurtbox" type="Area2D" parent="Player1" unique_id=1415402131]
 position = Vector2(100, -20)
@@ -96,7 +100,7 @@ shape = SubResource("RectangleShape2D_ho4cy")
 debug_color = Color(0.8117647, 0, 0.18039216, 0.41960785)
 
 [node name="Player2" type="CharacterBody2D" parent="." unique_id=1453117527]
-position = Vector2(-239.05, 252.11)
+position = Vector2(400, 150)
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
