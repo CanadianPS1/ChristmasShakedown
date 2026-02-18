@@ -16,8 +16,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="X-mas Shakedown: The Grinch who Hooked a Who"
 run/main_scene="uid://cncltiowchbl2"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://cmloy5v66lnhf"
 
 [input]
 
