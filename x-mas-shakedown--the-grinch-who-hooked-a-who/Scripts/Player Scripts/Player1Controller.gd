@@ -6,15 +6,8 @@ const JUMP_VELOCITY = -800.0
 # Get gravity from project settings to be consistent with rigid bodies
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var currentAttack = "";
-var lastDirection = "";
 @onready var crouching = false;
 var Grinch = true;
-var throwStep1 = false;
-var throwStep2 = false;
-var throwStep3 = false;
-var gabStep1 = false;
-var gabStep2 = false;
-var gabStep3 = false;
 func _physics_process(delta):
 	# Add gravity
 	if not is_on_floor():
@@ -25,29 +18,19 @@ func _physics_process(delta):
 	var heavie;
 	var kick;
 	var player;
-	var grinchPresent;
-	var grinchPresentBox;
 	if Grinch:
 		body = get_node("GrinchBody");
 		punch = get_node("GrinchPunch");
 		light = get_node("GrinchLight");
 		heavie = get_node("GrinchHeavie");
 		kick = get_node("GrinchKick");
-		grinchPresent = get_node("GrinchPresent");
-		grinchPresentBox = get_node("GrinchPresent/CollisionShape2D");
 	#movement for p1
 	# Handle jump
-	if Input.is_action_just_pressed("P1Left") and is_on_floor():
-		lastDirection = "left";
-	if Input.is_action_just_pressed("P1Right") and is_on_floor():
-		lastDirection = "right";
 	if Input.is_action_just_pressed("P1Up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		lastDirection = "up";
 	if Input.is_action_just_released("P1Down") and is_on_floor() and crouching == true:
 		crouching = false;
 		body.scale.y = body.scale.y * 2;
-		lastDirection = "down";
 	if Input.is_action_just_pressed("P1Down") and crouching == false:
 		crouching = true;
 		body.scale.y = body.scale.y / 2;
@@ -60,29 +43,16 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED / 7)
 	velocity.y += gravity * delta
 	#attacks
-	if grinchPresentBox.disabled == false and is_on_floor():
-		grinchPresentBox.disabled = true;
-		grinchPresent.visible = false;
+	
 	if Input.is_action_just_pressed("P1Punch") && currentAttack == "":
-		if(throwStep3):
-			throwStep3 = false;
-			#call the move
-			if Grinch:
-				grinchPresentBox.disabled = false;
-				grinchPresent.visible = true;
-				grinchPresent.position.y = body.position.y + 0.5;
-				grinchPresent.velocity.x = direction + 500;
-				grinchPresent.velocity.y += gravity * delta;
-				print("used present throw");
-		else:
-			print("P1 Punched");
-			punch.disabled = false;
-			punch.show()
-			currentAttack = "punch";
-			await get_tree().create_timer(0.2).timeout
-			punch.disabled = true;
-			punch.hide();
-			currentAttack = "";
+		print("P1 Punched");
+		punch.disabled = false;
+		punch.show()
+		currentAttack = "punch";
+		await get_tree().create_timer(0.2).timeout
+		punch.disabled = true;
+		punch.hide();
+		currentAttack = "";
 	if Input.is_action_just_pressed("P1Kick") && currentAttack == "":
 		print("P1 Kicked");
 		kick.disabled = false;
@@ -110,25 +80,5 @@ func _physics_process(delta):
 		light.disabled = true;
 		light.hide();
 		currentAttack = "";
-	if lastDirection == "left" and throwStep1 == false:
-		throwStep1 = true
-		print("step 1")
-	if lastDirection == "up" and throwStep1:
-		throwStep2 = true;
-		throwStep1 = false;
-		print("step 2")
-	if lastDirection == "right" and throwStep2:
-		throwStep2 = false;
-		throwStep3 = true;
-		print("step 3")
-	if lastDirection == "down" and gabStep1 == false:
-		throwStep1 = true
-	if lastDirection == "right" and gabStep1:
-		throwStep2 = true;
-		throwStep1 = false;
-	
-		
-		
-		
 	move_and_slide()
 	
