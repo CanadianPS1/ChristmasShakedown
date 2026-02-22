@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://by3y522gwvpcn"]
+[gd_scene format=3 uid="uid://yy2dxi56ipc3"]
 
-[ext_resource type="Script" uid="uid://dc5w2gne8bd1t" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_62mge"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_62mge"]
 [ext_resource type="Texture2D" uid="uid://bmnmfo3yxskbu" path="res://icon.svg" id="1_dsmy1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62mge"]

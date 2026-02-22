@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8s7xhy4ftfun"
+path="res://.godot/imported/You're a Mean One, Mr Grinch Dr Seuss.mp3-aee129396711ec231b5feeacef2ed12a.mp3str"
+
+[deps]
+
+source_file="res://Assets/You're a Mean One, Mr Grinch Dr Seuss.mp3"
+dest_files=["res://.godot/imported/You're a Mean One, Mr Grinch Dr Seuss.mp3-aee129396711ec231b5feeacef2ed12a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

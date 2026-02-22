@@ -34,33 +34,42 @@ func _ready():
 	characterSelectBackButton.pressed.connect(_characterSelectBackButtonPressed)
 	fightButton.pressed.connect(_fightButtonPressed)
 func _movesButtonPressed():
-	print("moves button pressed")
+	var sound = get_node("MainMenu/MovesButton/buttonSoundPlayer");
+	sound.play()
 	mainMenu.hide()
 	controlls.show()
 func _exitButtonPressed():
-	print("_exitButtonPressed button pressed")
+	var sound = get_node("MainMenu/ExitButton/buttonSoundPlayer");
+	sound.play()
+	get_tree().quit()
 func _playButtonPressed():
-	print("_playButtonPressed button pressed")
+	var sound = get_node("MainMenu/PlayButton/buttonSoundPlayer");
+	sound.play()
 	mainMenu.hide()
 	characterSelect.show()
 func _sallyBackButtonPressed():
-	print("_sallyBackButtonPressed button pressed")
+	var sound = get_node("SallyControlls/BackButton/buttonSoundPlayer");
+	sound.play()
 	sallyControlls.hide()
 	controlls.show()
 func _grinchBackButtonPressed():
-	print("_grinchBackButtonPressed button pressed")
+	var sound = get_node("GrinchControlls/BackButton/buttonSoundPlayer");
+	sound.play()
 	grinchControlls.hide()
 	controlls.show()
 func _backButtonPressed():
-	print("_backButtonPressed button pressed")
+	var sound = get_node("Controlls/BackButton/buttonSoundPlayer");
+	sound.play()
 	controlls.hide()
 	mainMenu.show()
 func _sallyControllsButtonPressed():
-	print("_sallyControllsButtonPressed button pressed")
+	var sound = get_node("SallyControlls/BackButton/buttonSoundPlayer");
+	sound.play()
 	controlls.hide()
 	sallyControlls.show()
 func _grinchControllsButtonPressed():
-	print("_grinchControlsButtonPressed button pressed")
+	var sound = get_node("GrinchControlls/BackButton/buttonSoundPlayer");
+	sound.play()
 	controlls.hide()
 	grinchControlls.show();
 func _replayButtonPressed():
@@ -70,10 +79,13 @@ func _sallyWhoPickButtonPressed():
 func _grinchPickButtonPressed():
 	print("_grinchPickButtonPressed button pressed")
 func _characterSelectBackButtonPressed():
-	print("_characterSelectBackButtonPressed button pressed")
+	var sound = get_node("CharacterSelect/BackButton/buttonSoundPlayer");
+	sound.play()
 	characterSelect.hide()
 	mainMenu.show()
 func _fightButtonPressed():
-	print("_fightButtonPressed button pressed")
+	var sound = get_node("CharacterSelect/FightButton/buttonSoundPlayer");
+	sound.play();
+	await get_tree().create_timer(1).timeout;
 	get_tree().change_scene_to_file("res://Sceens/GamePlay.tscn")
 	#make it display the fight sceen
