@@ -129,6 +129,14 @@ texture = ExtResource("7_x0lde")
 [node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/CharacterSelect/FightButton" unique_id=1594631683]
 stream = ExtResource("9_bkkru")
 
+[node name="SelectionLabel" type="Label" parent="UI/CharacterSelect" unique_id=300000001]
+offset_left = -250.0
+offset_top = -420.0
+offset_right = 250.0
+offset_bottom = -340.0
+horizontal_alignment = 1
+text = "Player 1: Pick your character!"
+
 [node name="PostGame" type="Node2D" parent="UI" unique_id=1716744426]
 visible = false
 

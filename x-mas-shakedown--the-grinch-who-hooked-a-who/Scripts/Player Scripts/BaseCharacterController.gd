@@ -41,8 +41,11 @@ func _ready():
 		facing = -1
 	else:
 		facing = 1
-	scale.x = facing 
-	
+	scale.x = facing
+
+	var character = GameState.player1_character if player_id == 1 else GameState.player2_character
+	print("Player " + str(player_id) + " character: " + character)
+
 	punch.body_entered.connect(_on_hurtbox_entered.bind("punch"))
 	kick.body_entered.connect(_on_hurtbox_entered.bind("kick"))
 	light.body_entered.connect(_on_hurtbox_entered.bind("light"))
@@ -81,8 +84,6 @@ func _physics_process(delta):
 			transform.x = Vector2(1, 0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED / 7)
-
-	velocity.y += gravity * delta
 
 	# Attacks
 	if Input.is_action_just_pressed(prefix + "Punch") and currentAttack == "":
@@ -127,8 +128,8 @@ func _on_hurtbox_entered(body, attack_name):
 func _take_damage(damage: float, attacker_id: int):
 	if current_health > 0:
 		current_health -= damage
-	elif current_health <= 0:
-		GameState.on_player_win(attacker_id)
+		if current_health <= 0:
+			GameState.on_player_win(attacker_id)
 	
 	
 
