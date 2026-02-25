@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bgrnch0000001"]
 
-[ext_resource type="Script" uid="uid://dc5w2gne8bd1t" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_script"]
-
+[ext_resource type="Script" uid="uid://odko30727r7" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_script"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
 radius = 48.0
@@ -11,48 +10,47 @@ height = 178.0
 size = Vector2(63.899998, 51)
 
 [sub_resource type="RectangleShape2D" id="RectShape_light"]
-size = Vector2(167.47499, 51)
+size = Vector2(50.737495, 51)
 
 [sub_resource type="RectangleShape2D" id="RectShape_heavy"]
-size = Vector2(204, 87.555)
+size = Vector2(58.5, 42.88875)
 
-[node name="Grinch" type="CharacterBody2D"]
+[node name="Grinch" type="CharacterBody2D" unique_id=1606530968]
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
 script = ExtResource("1_script")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=117475339]
 scale = Vector2(0.78823996, 0.54775274)
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1757530072]
 shape = SubResource("CapsuleShape2D_body")
 
-[node name="PunchHurtbox" type="Area2D" parent="."]
-position = Vector2(100, -20)
+[node name="PunchHurtbox" type="Area2D" parent="." unique_id=1405290632]
+position = Vector2(50, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHurtbox" unique_id=1520527879]
 shape = SubResource("RectShape_punch")
 debug_color = Color(0.81128365, 0, 0.17890558, 0.41960785)
 
-[node name="LightHurtbox" type="Area2D" parent="."]
-position = Vector2(150, -20)
+[node name="LightHurtbox" type="Area2D" parent="." unique_id=1184929293]
+position = Vector2(50, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LightHurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightHurtbox" unique_id=1388765142]
 shape = SubResource("RectShape_light")
 debug_color = Color(0.9819004, 0.50197864, 0.14907375, 0.41960785)
 
-[node name="HeavyHurtbox" type="Area2D" parent="."]
-position = Vector2(200, 0)
+[node name="HeavyHurtbox" type="Area2D" parent="." unique_id=667324507]
+position = Vector2(80, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HeavyHurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeavyHurtbox" unique_id=1563908409]
 shape = SubResource("RectShape_heavy")
 debug_color = Color(0.7340178, 0.00010877549, 0.62240976, 0.41960785)
 
-[node name="KickHurtbox" type="Area2D" parent="."]
-position = Vector2(80, 60)
+[node name="KickHurtbox" type="Area2D" parent="." unique_id=1149373531]
+position = Vector2(80, 10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KickHurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickHurtbox" unique_id=1106457078]
 shape = SubResource("RectShape_punch")
 debug_color = Color(0.8117647, 0, 0.18039216, 0.41960785)
-
