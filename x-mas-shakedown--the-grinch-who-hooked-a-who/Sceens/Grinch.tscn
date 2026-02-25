@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgrnch0000001"]
 
 [ext_resource type="Script" uid="uid://dc5w2gne8bd1t" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://dhnkvkh0rdi5c" path="res://Assets/Grinch-Idle.png" id="2_texture"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
 radius = 48.0
@@ -22,9 +22,8 @@ floor_max_angle = 1.213
 floor_snap_length = 14.8
 script = ExtResource("1_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.78823996, 0.54775274)
-texture = ExtResource("2_texture")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_body")

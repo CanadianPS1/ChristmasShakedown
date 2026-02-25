@@ -20,6 +20,7 @@ var heavie
 var kick
 var body_shape
 var facing = 1  # 1 = right, -1 = left
+var anim_sprite: AnimatedSprite2D  # set in _ready(); null-safe throughout
 func _ready():
 	body   = get_node("Hitbox")
 	print(body)
@@ -40,6 +41,47 @@ func _ready():
 	kick.body_entered.connect(_on_hurtbox_entered.bind("kick"))
 	light.body_entered.connect(_on_hurtbox_entered.bind("light"))
 	heavie.body_entered.connect(_on_hurtbox_entered.bind("heavie"))
+
+	# Animated sprite — built at runtime so both characters share this script
+	anim_sprite = get_node_or_null("AnimatedSprite2D")
+	if anim_sprite:
+		_setup_animations()
+
+# Build SpriteFrames programmatically so no texture paths are hard-coded in .tscn.
+# Both Grinch and Sally share this script; Sally's tint is set via modulate on the node.
+func _setup_animations() -> void:
+	var frames := SpriteFrames.new()
+	frames.remove_animation("default")
+
+	# ── idle (loops) ───────────────────────────────────────────────────────────
+	frames.add_animation("idle")
+	frames.set_animation_loop("idle", true)
+	frames.set_animation_speed("idle", 8.0)
+	for i in range(6):
+		frames.add_frame("idle", load("res://Assets/GrinchSprites/Grinch_Idle/tile%03d.png" % i))
+
+	# ── punch  (used for punch / light / heavie attacks; plays once) ───────────
+	frames.add_animation("punch")
+	frames.set_animation_loop("punch", false)
+	frames.set_animation_speed("punch", 12.0)
+	for i in range(6):
+		frames.add_frame("punch", load("res://Assets/GrinchSprites/Grinch_punch/tile%03d.png" % i))
+
+	# ── kick (plays once) ──────────────────────────────────────────────────────
+	frames.add_animation("kick")
+	frames.set_animation_loop("kick", false)
+	frames.set_animation_speed("kick", 10.0)
+	for i in range(6):
+		frames.add_frame("kick", load("res://Assets/GrinchSprites/Grinch_kick/tile%03d.png" % i))
+
+	# ── crouch (single static frame, holds until released) ────────────────────
+	frames.add_animation("crouch")
+	frames.set_animation_loop("crouch", false)
+	frames.set_animation_speed("crouch", 1.0)
+	frames.add_frame("crouch", load("res://Assets/GrinchSprites/Grinch_crouch/GrinchSpritesheet_crouch.png"))
+
+	anim_sprite.sprite_frames = frames
+	anim_sprite.play("idle")
 
 # Call this after setting player_id to apply player-specific initialization
 func apply_player_id():
@@ -66,10 +108,14 @@ func _physics_process(delta):
 		crouching = true
 		body_shape.height /= 2
 		body.position.y = 50.0
+		if anim_sprite and currentAttack == "":
+			anim_sprite.play("crouch")
 	elif Input.is_action_just_released(prefix + "Down") and crouching:
 		crouching = false
 		body_shape.height *= 2
 		body.position.y = 0.0
+		if anim_sprite and currentAttack == "":
+			anim_sprite.play("idle")
 
 	
 
@@ -105,10 +151,26 @@ func _do_attack(attack_name: String, hurtbox, duration: float):
 	currentAttack = attack_name
 	hurtbox.get_node("CollisionShape2D").disabled = false
 	hurtbox.show
+
+	# Play the matching attack animation
+	if anim_sprite:
+		match attack_name:
+			"punch", "light", "heavie":
+				anim_sprite.play("punch")
+			"kick":
+				anim_sprite.play("kick")
+
 	await get_tree().create_timer(duration).timeout
 	hurtbox.get_node("CollisionShape2D").disabled = true
 	hurtbox.hide
 	currentAttack = ""
+
+	# Return to the appropriate idle/crouch animation
+	if anim_sprite:
+		if crouching:
+			anim_sprite.play("crouch")
+		else:
+			anim_sprite.play("idle")
 
 func _on_hurtbox_entered(body, attack_name):
 	if body == self:

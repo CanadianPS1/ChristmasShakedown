@@ -1,0 +1,32 @@
+C:/FFmpeg/ffmpeg-6.1-essentials_build/bin/ffmpeg.exe -hide_banner -y -y -r 24 -start_number 0 -start_number_range 1 -i C:/Users/rfoster/Documents/2026-2027NeumontClasses/SoftwareEngeniring/Xmas Shakedown/ChristmasShakedown/x-mas-shakedown--the-grinch-who-hooked-a-who/Assets/frame%04d.png -crf 23 -preset medium -profile:v baseline -pix_fmt yuv420p C:/Users/rfoster/Documents/2026-2027NeumontClasses/SoftwareEngeniring/Xmas Shakedown/ChristmasShakedown/x-mas-shakedown--the-grinch-who-hooked-a-who/Assets/Grinch.mkv
+=====================================================
+Input #0, image2, from 'C:/Users/rfoster/Documents/2026-2027NeumontClasses/SoftwareEngeniring/Xmas Shakedown/ChristmasShakedown/x-mas-shakedown--the-grinch-who-hooked-a-who/Assets/frame%04d.png':
+  Duration: 00:00:00.60, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 800x400 [SAR 23622:23622 DAR 2:1], 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 000001d1ab04dcc0] using SAR=1/1
+[libx264 @ 000001d1ab04dcc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 000001d1ab04dcc0] profile Constrained Baseline, level 3.0, 4:2:0, 8-bit
+[libx264 @ 000001d1ab04dcc0] 264 - core 164 r3161 a354f11 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=0 ref=3 deblock=1:0:0 analyse=0x1:0x111 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=12 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, matroska, to 'C:/Users/rfoster/Documents/2026-2027NeumontClasses/SoftwareEngeniring/Xmas Shakedown/ChristmasShakedown/x-mas-shakedown--the-grinch-who-hooked-a-who/Assets/Grinch.mkv':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0: Video: h264 (H264 / 0x34363248), yuv420p(tv, progressive), 800x400 [SAR 1:1 DAR 2:1], q=2-31, 24 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    [out#0/matroska @ 000001d1aac70b40] video:33kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 2.169949%
+frame=   15 fps=0.0 q=-1.0 Lsize=      33kB time=00:00:00.58 bitrate= 468.8kbits/s speed=11.2x    
+[libx264 @ 000001d1ab04dcc0] frame I:1     Avg QP:14.86  size: 21365
+[libx264 @ 000001d1ab04dcc0] frame P:14    Avg QP:17.13  size:   819
+[libx264 @ 000001d1ab04dcc0] mb I  I16..4: 67.9%  0.0% 32.1%
+[libx264 @ 000001d1ab04dcc0] mb P  I16..4:  0.5%  0.0%  0.8%  P16..4:  0.9%  0.5%  0.4%  0.0%  0.0%    skip:96.9%
+[libx264 @ 000001d1ab04dcc0] coded y,uvDC,uvAC intra: 27.5% 37.6% 36.0% inter: 0.6% 0.7% 0.4%
+[libx264 @ 000001d1ab04dcc0] i16 v,h,dc,p: 90%  3%  7%  0%
+[libx264 @ 000001d1ab04dcc0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30% 17% 20%  6%  5%  7%  4%  7%  4%
+[libx264 @ 000001d1ab04dcc0] i8c dc,h,v,p: 75%  8% 13%  4%
+[libx264 @ 000001d1ab04dcc0] ref P L0: 89.3%  8.4%  2.3%
+[libx264 @ 000001d1ab04dcc0] kb/s:420.20
