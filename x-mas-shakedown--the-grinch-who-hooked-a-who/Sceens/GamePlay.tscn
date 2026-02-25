@@ -20,8 +20,8 @@ size = Vector2(1125.5, 20)
 script = ExtResource("3_gameplay")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1910150968]
-position = Vector2(-4.12506, 53.5)
-scale = Vector2(0.573364, 0.387207)
+position = Vector2(-4.12506, 43.499973)
+scale = Vector2(0.573364, 0.39697266)
 texture = ExtResource("2_62mge")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1416099497]
