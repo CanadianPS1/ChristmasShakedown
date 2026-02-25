@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dphcmm71ccal0"
+path="res://.godot/imported/1.42 Hard Boiled Heavies Mischief.mp3-997b9511599d268671a65f2c63d05de3.mp3str"
+
+[deps]
+
+source_file="res://Assets/1.42 Hard Boiled Heavies Mischief.mp3"
+dest_files=["res://.godot/imported/1.42 Hard Boiled Heavies Mischief.mp3-997b9511599d268671a65f2c63d05de3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

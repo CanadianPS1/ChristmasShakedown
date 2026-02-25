@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cggouvdmw6yf3"
-path="res://.godot/imported/tile004.png-1dd6ba020aa7b9d4650caba5f8460b3b.ctex"
+uid="uid://qmdebjh4skh2"
+path="res://.godot/imported/sallyWhoHeadshot.png-d5836bd9a61f8f251607232c62311c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GrinchSprites/Grinch_kick/tile004.png"
-dest_files=["res://.godot/imported/tile004.png-1dd6ba020aa7b9d4650caba5f8460b3b.ctex"]
+source_file="res://Assets/sallyWhoHeadshot.png"
+dest_files=["res://.godot/imported/sallyWhoHeadshot.png-d5836bd9a61f8f251607232c62311c78.ctex"]
 
 [params]
 
