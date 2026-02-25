@@ -1,22 +1,28 @@
 extends Node2D
 
+# Maps the character name (as stored in GameState) to its prefab scene.
+# Add new characters here when you create them.
+const CHARACTER_SCENES: Dictionary = {
+	"grinch": preload("res://Sceens/Grinch.tscn"),
+	"sally":  preload("res://Sceens/Sally.tscn"),
+}
+
 func _ready():
-	var grinch = $Grinch
-	var sally = $Sally
+	# Instantiate each player's chosen character separately.
+	# Both players can pick the same character — each gets their own independent instance.
+	var p1: CharacterBody2D = CHARACTER_SCENES[GameState.player1_character].instantiate()
+	var p2: CharacterBody2D = CHARACTER_SCENES[GameState.player2_character].instantiate()
 
-	# Assign player_id based on which character each player selected
-	if GameState.player1_character == "grinch":
-		grinch.player_id = 1
-		sally.player_id = 2
-	else:
-		# Player 1 selected Sally; Player 2 gets Grinch
-		sally.player_id = 1
-		grinch.player_id = 2
+	p1.player_id = 1
+	p2.player_id = 2
 
-	# Apply the now-correct player_id to each character node
-	grinch.apply_player_id()
-	sally.apply_player_id()
+	add_child(p1)
+	add_child(p2)
 
-	# Position each character at the spawn point matching their player_id
-	grinch.position = $Player1Spawn.position if grinch.player_id == 1 else $Player2Spawn.position
-	sally.position = $Player1Spawn.position if sally.player_id == 1 else $Player2Spawn.position
+	# apply_player_id sets the input prefix, facing direction, and scale after _ready() has run.
+	p1.apply_player_id()
+	p2.apply_player_id()
+
+	# Place each character at their spawn marker.
+	p1.position = $Player1Spawn.position
+	p2.position = $Player2Spawn.position

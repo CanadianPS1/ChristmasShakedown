@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bslly00000001"]
+
+[ext_resource type="Script" uid="uid://dc5w2gne8bd1t" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bmnmfo3yxskbu" path="res://icon.svg" id="2_texture"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
+radius = 48.0
+height = 178.0
+
+[sub_resource type="RectangleShape2D" id="RectShape_punch"]
+size = Vector2(63.899998, 51)
+
+[sub_resource type="RectangleShape2D" id="RectShape_light"]
+size = Vector2(167.47499, 51)
+
+[sub_resource type="RectangleShape2D" id="RectShape_heavy"]
+size = Vector2(204, 87.555)
+
+[node name="Sally" type="CharacterBody2D"]
+floor_constant_speed = true
+floor_max_angle = 1.213
+floor_snap_length = 14.8
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7343749, 1.3749999)
+texture = ExtResource("2_texture")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_body")
+
+[node name="PunchHurtbox" type="Area2D" parent="."]
+position = Vector2(100, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchHurtbox"]
+shape = SubResource("RectShape_punch")
+debug_color = Color(0.81128365, 0, 0.17890558, 0.41960785)
+
+[node name="LightHurtbox" type="Area2D" parent="."]
+position = Vector2(150, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightHurtbox"]
+shape = SubResource("RectShape_light")
+debug_color = Color(0.9819004, 0.50197864, 0.14907375, 0.41960785)
+
+[node name="HeavyHurtbox" type="Area2D" parent="."]
+position = Vector2(200, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeavyHurtbox"]
+shape = SubResource("RectShape_heavy")
+debug_color = Color(0.7340178, 0.00010877549, 0.62240976, 0.41960785)
+
+[node name="KickHurtbox" type="Area2D" parent="."]
+position = Vector2(80, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickHurtbox"]
+shape = SubResource("RectShape_punch")
+debug_color = Color(0.8117647, 0, 0.18039216, 0.41960785)
+
