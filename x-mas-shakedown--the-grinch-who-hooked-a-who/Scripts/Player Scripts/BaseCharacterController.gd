@@ -21,7 +21,6 @@ var kick
 var body_shape
 var facing = 1  # 1 = right, -1 = left
 func _ready():
-	prefix = "P" + str(player_id)
 	body   = get_node("Hitbox")
 	print(body)
 	punch  = get_node("PunchHurtbox")
@@ -37,19 +36,21 @@ func _ready():
 	heavie.hide
 	kick.get_node("CollisionShape2D").disabled = true
 	kick.hide
+	punch.body_entered.connect(_on_hurtbox_entered.bind("punch"))
+	kick.body_entered.connect(_on_hurtbox_entered.bind("kick"))
+	light.body_entered.connect(_on_hurtbox_entered.bind("light"))
+	heavie.body_entered.connect(_on_hurtbox_entered.bind("heavie"))
+
+# Call this after setting player_id to apply player-specific initialization
+func apply_player_id():
+	prefix = "P" + str(player_id)
 	if player_id == 2:
 		facing = -1
 	else:
 		facing = 1
 	scale.x = facing
-
 	var character = GameState.player1_character if player_id == 1 else GameState.player2_character
 	print("Player " + str(player_id) + " character: " + character)
-
-	punch.body_entered.connect(_on_hurtbox_entered.bind("punch"))
-	kick.body_entered.connect(_on_hurtbox_entered.bind("kick"))
-	light.body_entered.connect(_on_hurtbox_entered.bind("light"))
-	heavie.body_entered.connect(_on_hurtbox_entered.bind("heavie"))
 func _physics_process(delta):
 
 	# Gravity

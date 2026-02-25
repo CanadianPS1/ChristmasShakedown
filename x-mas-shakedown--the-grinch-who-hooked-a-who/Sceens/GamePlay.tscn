@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dc5w2gne8bd1t" path="res://Scripts/Player Scripts/BaseCharacterController.gd" id="1_62mge"]
 [ext_resource type="Texture2D" uid="uid://bmnmfo3yxskbu" path="res://icon.svg" id="1_dsmy1"]
 [ext_resource type="Texture2D" uid="uid://dhnkvkh0rdi5c" path="res://Assets/Grinch-Idle.png" id="2_68qrh"]
+[ext_resource type="Script" uid="uid://bdxymulcktfv5" path="res://Scripts/GamePlay.gd" id="3_gameplay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62mge"]
 size = Vector2(1153, 48)
@@ -34,6 +35,7 @@ radius = 48.0
 height = 178.0
 
 [node name="Game" type="Node2D" unique_id=1491194938]
+script = ExtResource("3_gameplay")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1151786621]
 position = Vector2(-185, 125)
@@ -58,87 +60,92 @@ shape = SubResource("RectangleShape2D_ud5e3")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=529961948]
 position = Vector2(-1, -31)
 
-[node name="Player1" type="CharacterBody2D" parent="." unique_id=38468320]
+[node name="Grinch" type="CharacterBody2D" parent="." unique_id=38468320]
 position = Vector2(-400, 150)
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
 script = ExtResource("1_62mge")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1" unique_id=1627134617]
+[node name="Sprite2D" type="Sprite2D" parent="Grinch" unique_id=1627134617]
 scale = Vector2(0.78823996, 0.54775274)
 texture = ExtResource("2_68qrh")
 
-[node name="Hitbox" type="CollisionShape2D" parent="Player1" unique_id=719732252]
+[node name="Hitbox" type="CollisionShape2D" parent="Grinch" unique_id=719732252]
 shape = SubResource("CapsuleShape2D_68qrh")
 
-[node name="PunchHurtbox" type="Area2D" parent="Player1" unique_id=1415402131]
+[node name="PunchHurtbox" type="Area2D" parent="Grinch" unique_id=1415402131]
 position = Vector2(100, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/PunchHurtbox" unique_id=978026593]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grinch/PunchHurtbox" unique_id=978026593]
 shape = SubResource("RectangleShape2D_ho4cy")
 debug_color = Color(0.81128365, 0, 0.17890558, 0.41960785)
 
-[node name="LightHurtbox" type="Area2D" parent="Player1" unique_id=21693905]
+[node name="LightHurtbox" type="Area2D" parent="Grinch" unique_id=21693905]
 position = Vector2(150, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/LightHurtbox" unique_id=239783796]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grinch/LightHurtbox" unique_id=239783796]
 shape = SubResource("RectangleShape2D_e0b3l")
 debug_color = Color(0.9819004, 0.50197864, 0.14907375, 0.41960785)
 
-[node name="HeavyHurtbox" type="Area2D" parent="Player1" unique_id=2028183426]
+[node name="HeavyHurtbox" type="Area2D" parent="Grinch" unique_id=2028183426]
 position = Vector2(200, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/HeavyHurtbox" unique_id=575658636]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grinch/HeavyHurtbox" unique_id=575658636]
 shape = SubResource("RectangleShape2D_8v46g")
 debug_color = Color(0.7340178, 0.00010877549, 0.62240976, 0.41960785)
 
-[node name="KickHurtbox" type="Area2D" parent="Player1" unique_id=178911829]
+[node name="KickHurtbox" type="Area2D" parent="Grinch" unique_id=178911829]
 position = Vector2(80, 60)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/KickHurtbox" unique_id=1163698960]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grinch/KickHurtbox" unique_id=1163698960]
 shape = SubResource("RectangleShape2D_ho4cy")
 debug_color = Color(0.8117647, 0, 0.18039216, 0.41960785)
 
-[node name="Player2" type="CharacterBody2D" parent="." unique_id=1453117527]
+[node name="Sally" type="CharacterBody2D" parent="." unique_id=1453117527]
 position = Vector2(400, 150)
 floor_constant_speed = true
 floor_max_angle = 1.213
 floor_snap_length = 14.8
 script = ExtResource("1_62mge")
-player_id = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2" unique_id=112510634]
+[node name="Sprite2D" type="Sprite2D" parent="Sally" unique_id=112510634]
 scale = Vector2(0.7343749, 1.3749999)
 texture = ExtResource("1_dsmy1")
 
-[node name="Hitbox" type="CollisionShape2D" parent="Player2" unique_id=435427803]
+[node name="Hitbox" type="CollisionShape2D" parent="Sally" unique_id=435427803]
 shape = SubResource("CapsuleShape2D_62mge")
 
-[node name="PunchHurtbox" type="Area2D" parent="Player2" unique_id=611328614]
+[node name="PunchHurtbox" type="Area2D" parent="Sally" unique_id=611328614]
 position = Vector2(100, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/PunchHurtbox" unique_id=547524480]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sally/PunchHurtbox" unique_id=547524480]
 shape = SubResource("RectangleShape2D_ho4cy")
 debug_color = Color(0.81128365, 0, 0.17890558, 0.41960785)
 
-[node name="LightHurtbox" type="Area2D" parent="Player2" unique_id=627915009]
+[node name="LightHurtbox" type="Area2D" parent="Sally" unique_id=627915009]
 position = Vector2(150, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/LightHurtbox" unique_id=1223980828]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sally/LightHurtbox" unique_id=1223980828]
 shape = SubResource("RectangleShape2D_e0b3l")
 debug_color = Color(0.9819004, 0.50197864, 0.14907375, 0.41960785)
 
-[node name="HeavyHurtbox" type="Area2D" parent="Player2" unique_id=1707304170]
+[node name="HeavyHurtbox" type="Area2D" parent="Sally" unique_id=1707304170]
 position = Vector2(200, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/HeavyHurtbox" unique_id=1250866125]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sally/HeavyHurtbox" unique_id=1250866125]
 shape = SubResource("RectangleShape2D_8v46g")
 debug_color = Color(0.7340178, 0.00010877549, 0.62240976, 0.41960785)
 
-[node name="KickHurtbox" type="Area2D" parent="Player2" unique_id=2124208820]
+[node name="KickHurtbox" type="Area2D" parent="Sally" unique_id=2124208820]
 position = Vector2(80, 60)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2/KickHurtbox" unique_id=1416437124]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sally/KickHurtbox" unique_id=1416437124]
 shape = SubResource("RectangleShape2D_ho4cy")
 debug_color = Color(0.8117647, 0, 0.18039216, 0.41960785)
+
+[node name="Player1Spawn" type="Node2D" parent="." unique_id=1916177862]
+position = Vector2(-400, 100)
+
+[node name="Player2Spawn" type="Node2D" parent="." unique_id=2021550299]
+position = Vector2(400, 100)
