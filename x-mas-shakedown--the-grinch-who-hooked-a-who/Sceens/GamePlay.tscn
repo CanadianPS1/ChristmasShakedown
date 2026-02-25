@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://yy2dxi56ipc3"]
+[gd_scene format=3 uid="uid://yy2dxi56ipc3"]
 
 [ext_resource type="Texture2D" uid="uid://bo45kr71157es" path="res://Assets/background.png" id="2_62mge"]
 [ext_resource type="AudioStream" uid="uid://dphcmm71ccal0" path="res://Assets/1.42 Hard Boiled Heavies Mischief.mp3" id="3_68qrh"]
@@ -16,44 +16,44 @@ size = Vector2(41, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud5e3"]
 size = Vector2(1125.5, 20)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=2079846407]
 script = ExtResource("3_gameplay")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1910150968]
 position = Vector2(-4.12506, 53.5)
 scale = Vector2(0.573364, 0.387207)
 texture = ExtResource("2_62mge")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1416099497]
 position = Vector2(-185, 125)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=715682966]
 position = Vector2(185, 141)
 shape = SubResource("RectangleShape2D_62mge")
 debug_color = Color(0, 0.65098, 0.0901961, 1)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1319493577]
 position = Vector2(-383, -160)
 shape = SubResource("RectangleShape2D_68qrh")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1711844185]
 position = Vector2(752, -157)
 shape = SubResource("RectangleShape2D_3d5e0")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=373169824]
 position = Vector2(188.25, -473)
 shape = SubResource("RectangleShape2D_ud5e3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1040020317]
 position = Vector2(-1, -31)
 
-[node name="Player1Spawn" type="Node2D" parent="."]
+[node name="Player1Spawn" type="Node2D" parent="." unique_id=1705200338]
 position = Vector2(-400, 100)
 
-[node name="Player2Spawn" type="Node2D" parent="."]
+[node name="Player2Spawn" type="Node2D" parent="." unique_id=54934398]
 position = Vector2(400, 100)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1409742883]
 stream = ExtResource("3_68qrh")
 autoplay = true
 parameters/looping = true
