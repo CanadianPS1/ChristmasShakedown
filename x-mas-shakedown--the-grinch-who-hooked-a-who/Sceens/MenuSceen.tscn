@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cncltiowchbl2"]
+[gd_scene format=3 uid="uid://dvupypa23pjdl"]
 
 [ext_resource type="Script" uid="uid://b082ygwuo1n4r" path="res://Scripts/ButtonHandler.gd" id="1_2bfgj"]
 [ext_resource type="Texture2D" uid="uid://b7qd3fxynyhtt" path="res://Assets/menuBackground.png" id="2_dwew8"]
@@ -13,19 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://8lg6cwroumrc" path="res://Assets/grinchButton.png" id="9_ngidu"]
 [ext_resource type="AudioStream" uid="uid://b8s7xhy4ftfun" path="res://Assets/You're a Mean One, Mr Grinch Dr Seuss.mp3" id="10_ngidu"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=589661187]
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Node2D" parent="." unique_id=782724587]
 script = ExtResource("1_2bfgj")
 
-[node name="Sprite2D" type="Sprite2D" parent="UI"]
+[node name="Sprite2D" type="Sprite2D" parent="UI" unique_id=1912991161]
 position = Vector2(-0.499965, 0.999995)
 scale = Vector2(0.563965, 0.317383)
 texture = ExtResource("2_dwew8")
 
-[node name="MainMenu" type="Node2D" parent="UI"]
+[node name="MainMenu" type="Node2D" parent="UI" unique_id=2055633070]
 
-[node name="MovesButton" type="Button" parent="UI/MainMenu"]
+[node name="MovesButton" type="Button" parent="UI/MainMenu" unique_id=284025671]
 offset_left = -198.0
 offset_top = -19.0
 offset_right = 194.0
@@ -33,15 +33,15 @@ offset_bottom = 70.0
 mouse_default_cursor_shape = 2
 text = "Moves"
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu/MovesButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu/MovesButton" unique_id=1823559897]
 position = Vector2(186, 69)
 scale = Vector2(0.233887, 0.131592)
 texture = ExtResource("3_o67ut")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/MainMenu/MovesButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/MainMenu/MovesButton" unique_id=433897097]
 stream = ExtResource("4_t1ll0")
 
-[node name="ExitButton" type="Button" parent="UI/MainMenu"]
+[node name="ExitButton" type="Button" parent="UI/MainMenu" unique_id=1988336817]
 offset_left = -199.0
 offset_top = 113.0
 offset_right = 196.0
@@ -49,15 +49,15 @@ offset_bottom = 211.0
 mouse_default_cursor_shape = 2
 text = "Exit"
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu/ExitButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu/ExitButton" unique_id=13103998]
 position = Vector2(186, 82)
 scale = Vector2(0.236816, 0.137695)
 texture = ExtResource("3_htkpg")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/MainMenu/ExitButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/MainMenu/ExitButton" unique_id=1813610491]
 stream = ExtResource("4_t1ll0")
 
-[node name="PlayButton" type="Button" parent="UI/MainMenu"]
+[node name="PlayButton" type="Button" parent="UI/MainMenu" unique_id=862858443]
 offset_left = -203.0
 offset_top = -168.0
 offset_right = 192.0
@@ -66,18 +66,18 @@ mouse_default_cursor_shape = 2
 text = "
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu/PlayButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/MainMenu/PlayButton" unique_id=149178710]
 position = Vector2(186, 79)
 scale = Vector2(0.232422, 0.135742)
 texture = ExtResource("4_o67ut")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/MainMenu/PlayButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/MainMenu/PlayButton" unique_id=132621826]
 stream = ExtResource("4_t1ll0")
 
-[node name="CharacterSelect" type="Node2D" parent="UI"]
+[node name="CharacterSelect" type="Node2D" parent="UI" unique_id=948988982]
 visible = false
 
-[node name="SallyWho" type="Button" parent="UI/CharacterSelect"]
+[node name="SallyWho" type="Button" parent="UI/CharacterSelect" unique_id=1348714070]
 offset_left = 41.0
 offset_top = -172.0
 offset_right = 200.0
@@ -86,7 +86,7 @@ mouse_default_cursor_shape = 2
 text = "Sally Who
 "
 
-[node name="Grinch" type="Button" parent="UI/CharacterSelect"]
+[node name="Grinch" type="Button" parent="UI/CharacterSelect" unique_id=944534844]
 offset_left = -188.0
 offset_top = -173.0
 offset_right = -29.0
@@ -95,7 +95,7 @@ mouse_default_cursor_shape = 2
 text = "The Grinch
 "
 
-[node name="BackButton" type="Button" parent="UI/CharacterSelect"]
+[node name="BackButton" type="Button" parent="UI/CharacterSelect" unique_id=2131014371]
 offset_left = -196.0
 offset_top = 160.0
 offset_right = 199.0
@@ -104,15 +104,15 @@ mouse_default_cursor_shape = 2
 text = "Back
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/CharacterSelect/BackButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/CharacterSelect/BackButton" unique_id=1526110793]
 position = Vector2(189, 95)
 scale = Vector2(0.251953, 0.168701)
 texture = ExtResource("6_bwjwd")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/CharacterSelect/BackButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/CharacterSelect/BackButton" unique_id=1029883579]
 stream = ExtResource("4_t1ll0")
 
-[node name="FightButton" type="Button" parent="UI/CharacterSelect"]
+[node name="FightButton" type="Button" parent="UI/CharacterSelect" unique_id=50684006]
 offset_left = -194.0
 offset_top = -294.0
 offset_right = 201.0
@@ -121,18 +121,26 @@ mouse_default_cursor_shape = 2
 text = "FIGHT
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/CharacterSelect/FightButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/CharacterSelect/FightButton" unique_id=1742654403]
 position = Vector2(187, 77)
 scale = Vector2(0.255371, 0.133057)
 texture = ExtResource("7_x0lde")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/CharacterSelect/FightButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/CharacterSelect/FightButton" unique_id=1594631683]
 stream = ExtResource("9_bkkru")
 
-[node name="PostGame" type="Node2D" parent="UI"]
+[node name="SelectionLabel" type="Label" parent="UI/CharacterSelect" unique_id=300000001]
+offset_left = -250.0
+offset_top = -420.0
+offset_right = 250.0
+offset_bottom = -340.0
+horizontal_alignment = 1
+text = "Player 1: Pick your character!"
+
+[node name="PostGame" type="Node2D" parent="UI" unique_id=1716744426]
 visible = false
 
-[node name="ReplayButton" type="Button" parent="UI/PostGame"]
+[node name="ReplayButton" type="Button" parent="UI/PostGame" unique_id=1943265676]
 offset_left = 92.0
 offset_top = -96.0
 offset_right = 487.0
@@ -141,7 +149,7 @@ mouse_default_cursor_shape = 2
 text = "Replay
 "
 
-[node name="ExitToMainMenuButton" type="Button" parent="UI/PostGame"]
+[node name="ExitToMainMenuButton" type="Button" parent="UI/PostGame" unique_id=1484047897]
 offset_left = 93.0
 offset_top = 41.0
 offset_right = 488.0
@@ -149,10 +157,10 @@ offset_bottom = 139.0
 mouse_default_cursor_shape = 2
 text = "Exit to Main Menu"
 
-[node name="Controlls" type="Node2D" parent="UI"]
+[node name="Controlls" type="Node2D" parent="UI" unique_id=771789018]
 visible = false
 
-[node name="SallyWho" type="Button" parent="UI/Controlls"]
+[node name="SallyWho" type="Button" parent="UI/Controlls" unique_id=1859668531]
 offset_left = 41.0
 offset_top = -172.0
 offset_right = 200.0
@@ -161,15 +169,15 @@ mouse_default_cursor_shape = 2
 text = "Sally Who
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Controlls/SallyWho"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/Controlls/SallyWho" unique_id=713244418]
 position = Vector2(92.5, 96)
 scale = Vector2(0.200684, 0.221313)
 texture = ExtResource("8_0qg22")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/Controlls/SallyWho"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/Controlls/SallyWho" unique_id=1166795613]
 stream = ExtResource("4_t1ll0")
 
-[node name="BackButton" type="Button" parent="UI/Controlls"]
+[node name="BackButton" type="Button" parent="UI/Controlls" unique_id=984621414]
 offset_left = -196.0
 offset_top = 160.0
 offset_right = 199.0
@@ -178,15 +186,15 @@ mouse_default_cursor_shape = 2
 text = "Back
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Controlls/BackButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/Controlls/BackButton" unique_id=1185180178]
 position = Vector2(185, 79.5625)
 scale = Vector2(0.230103, 0.143127)
 texture = ExtResource("6_bwjwd")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/Controlls/BackButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/Controlls/BackButton" unique_id=2095531981]
 stream = ExtResource("4_t1ll0")
 
-[node name="Grinch" type="Button" parent="UI/Controlls"]
+[node name="Grinch" type="Button" parent="UI/Controlls" unique_id=2078754344]
 offset_left = -188.0
 offset_top = -173.0
 offset_right = -29.0
@@ -195,18 +203,18 @@ mouse_default_cursor_shape = 2
 text = "The Grinch
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/Controlls/Grinch"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/Controlls/Grinch" unique_id=209107033]
 position = Vector2(83, 68)
 scale = Vector2(0.193359, 0.255859)
 texture = ExtResource("9_ngidu")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/Controlls/Grinch"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/Controlls/Grinch" unique_id=650102383]
 stream = ExtResource("4_t1ll0")
 
-[node name="GrinchControlls" type="Node2D" parent="UI"]
+[node name="GrinchControlls" type="Node2D" parent="UI" unique_id=1653981418]
 visible = false
 
-[node name="BackButton" type="Button" parent="UI/GrinchControlls"]
+[node name="BackButton" type="Button" parent="UI/GrinchControlls" unique_id=2118397384]
 offset_left = -196.0
 offset_top = 160.0
 offset_right = 199.0
@@ -215,25 +223,25 @@ mouse_default_cursor_shape = 2
 text = "Back
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/GrinchControlls/BackButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/GrinchControlls/BackButton" unique_id=2068490985]
 position = Vector2(185.25, 86)
 scale = Vector2(0.233154, 0.178955)
 texture = ExtResource("6_bwjwd")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/GrinchControlls/BackButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/GrinchControlls/BackButton" unique_id=612395228]
 stream = ExtResource("4_t1ll0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/GrinchControlls"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/GrinchControlls" unique_id=1840782787]
 offset_left = -56.0
 offset_top = -275.0
 offset_right = 295.0
 offset_bottom = -212.0
 text = "Grinch Controlls"
 
-[node name="SallyControlls" type="Node2D" parent="UI"]
+[node name="SallyControlls" type="Node2D" parent="UI" unique_id=855492337]
 visible = false
 
-[node name="BackButton" type="Button" parent="UI/SallyControlls"]
+[node name="BackButton" type="Button" parent="UI/SallyControlls" unique_id=1087920915]
 offset_left = -196.0
 offset_top = 160.0
 offset_right = 199.0
@@ -242,25 +250,25 @@ mouse_default_cursor_shape = 2
 text = "Back
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/SallyControlls/BackButton"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/SallyControlls/BackButton" unique_id=993379234]
 position = Vector2(185, 85)
 scale = Vector2(0.246094, 0.168457)
 texture = ExtResource("6_bwjwd")
 
-[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/SallyControlls/BackButton"]
+[node name="buttonSoundPlayer" type="AudioStreamPlayer2D" parent="UI/SallyControlls/BackButton" unique_id=315404197]
 stream = ExtResource("4_t1ll0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/SallyControlls"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/SallyControlls" unique_id=2081004822]
 offset_left = -56.0
 offset_top = -275.0
 offset_right = 295.0
 offset_bottom = -212.0
 text = "Sally Who Controlls"
 
-[node name="SongPlayer" type="AudioStreamPlayer2D" parent="UI"]
+[node name="SongPlayer" type="AudioStreamPlayer2D" parent="UI" unique_id=2096264399]
 stream = ExtResource("10_ngidu")
 volume_db = -17.64
 autoplay = true
 parameters/looping = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=956841595]
